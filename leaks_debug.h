@@ -6,6 +6,9 @@
 //  Copyright © 2017 Кирилл. All rights reserved.
 //
 
+#ifndef LEAKS_DEBUG_H
+#define LEAKS_DEBUG_H
+
 /** Режим отладки Heap-а.
  * 0 - Нет отладки.
  * 1 - Следить за созданием и удалением объектов. 
@@ -40,3 +43,5 @@ void _dumpMemoryLeaks();
 
 /** Очищает список для слежки за выделенной памятью. */
 void _freeHeapList();
+
+#endif

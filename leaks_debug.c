@@ -14,7 +14,7 @@
 #if DEBUG_HEAP > 0
 
 typedef struct HeapItem {
-    void* next;
+    struct HeapItem* next;
     void* pointer;
     char* fileName;
     size_t line;
@@ -60,7 +60,7 @@ HeapItem* listPop(List* list) {
 
 /** Удаляет элемент на данной позиции и возвращает его значение.
  * Если на данной позиции нет элемента, возвщает NULL. */
-void* listRemoveItem(List* list, size_t position) {
+HeapItem* listRemoveItem(List* list, size_t position) {
     if (!list || !list->head)
         return NULL;
     
